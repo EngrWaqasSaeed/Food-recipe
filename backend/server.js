@@ -4,9 +4,7 @@ const dotenv = require("dotenv").config();
 
 const PORT = process.env.PORT || 3000;
 
-app.get("/", (req, res) => {
-  res.json({ message: "hello world" });
-});
+app.use("/recipe", require("./routes/recipe"));
 
 app.listen(PORT, (err) => {
   console.log(`app is listen on port ${PORT}`);
